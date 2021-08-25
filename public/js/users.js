@@ -16,7 +16,7 @@ User.prototype.createUser = function() {
     password: $('input[name="password"]').val(),
   }
   $.ajax({
-    url: '/user/new',
+    url: 'http://localhost:90/user/new',
     type: "get",
     data: post_data,
     dataType: 'json',

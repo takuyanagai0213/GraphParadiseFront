@@ -13,7 +13,7 @@ User.prototype.init = function() {
 }
 User.prototype.showUser = function() {
   $.ajax({
-    url: '/user/get',
+    url: 'http://localhost:90/api/users',
     type: "get",
     dataType: 'json',
   }).then(this.responseData.bind(this));
