@@ -12,7 +12,7 @@
   <div class="field">
     <label class="label">Name</label>
     <div class="control">
-      <input class="input" type="text"  name="name" placeholder="Text input">
+      <input class="input" type="text"  name="name" v-model="name" placeholder="Text input">
     </div>
   </div>
   <div class="field">
@@ -46,7 +46,7 @@
   <div class="field">
     <label class="label">Password</label>
     <div class="control has-icons-left has-icons-right">
-      <input class="input is-danger" type="password"  name="password" placeholder="パスワードを入力してください" value="">
+      <input class="input is-danger" type="password"  name="password" v-model="password" placeholder="パスワードを入力してください">
       <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
       </span>
@@ -106,41 +106,37 @@
       <button class="button is-link is-light">Cancel</button>
     </div>
   </div>
+  {{info}}
   </section>
 </template>
 <script>
 import Header from './../components/Header'
+import axios from 'axios'
 
 export default {
   name: 'app',
   components : {
     Header
   },
+  data() {
+    return {
+      info: []
+    }
+  },
   computed() {
 
   },
   methods: {
     createUser: function() {
-      console.log('push')
       axios
-        .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-        .then(response => (this.info = response))
-      // $('input[name="password"]')
-      // const post_data = {
-      //   name: $('input[name="name"]').val(),
-      //   password: $('input[name="password"]').val(),
-      // }
-    // $.ajax({
-    //   url: 'http://localhost:90/user/new',
-    //   type: "get",
-    //   data: post_data,
-    //   dataType: 'json',
-    // }).then(this.responseData.bind(this));
-    // },
+        .get('http://localhost:90/user/new?name=' + this.name + '&password=' + this.password,{
+          name: "test",
+          password: "sssss",
+        })
+        .then(function(response) {
+          console.log(response)
+        })
     },
-    responseData: function(message) {
-      console.log(message)
-    }
   }
 }
 // User.prototype.def_s = new Object({
