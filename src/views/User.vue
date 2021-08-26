@@ -100,7 +100,7 @@
   
   <div class="field is-grouped">
     <div class="control">
-      <button class="button is-link" id="submit">Submit</button>
+      <button class="button is-link" v-on:click="createUser">Submit</button>
     </div>
     <div class="control">
       <button class="button is-link is-light">Cancel</button>
@@ -115,6 +115,36 @@ export default {
   name: 'app',
   components : {
     Header
+  },
+  computed() {
+
+  },
+  methods: {
+    createUser: function() {
+      console.log('push')
+      axios
+        .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+        .then(response => (this.info = response))
+      // $('input[name="password"]')
+      // const post_data = {
+      //   name: $('input[name="name"]').val(),
+      //   password: $('input[name="password"]').val(),
+      // }
+    // $.ajax({
+    //   url: 'http://localhost:90/user/new',
+    //   type: "get",
+    //   data: post_data,
+    //   dataType: 'json',
+    // }).then(this.responseData.bind(this));
+    // },
+    },
+    responseData: function(message) {
+      console.log(message)
+    }
   }
 }
+// User.prototype.def_s = new Object({
+//   rooms: {},
+//   room_name_list: []
+// });
 </script>
