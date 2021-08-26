@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:12-alpine
 
 # アプリケーションディレクトリを作成する
 WORKDIR /usr/src/app

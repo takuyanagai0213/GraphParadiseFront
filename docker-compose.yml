@@ -3,7 +3,7 @@ services:
   webserver:
     build:
       context: .
-      dockerfile: .
+      dockerfile: ./Dockerfile
     tty: true
     volumes:
       - .:/usr/src/app
