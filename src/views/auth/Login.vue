@@ -1,5 +1,5 @@
 <template>
-  <Header/>
+  <HeaderNotAuth/>
 
 <section class="hero is-primary has-background-light">
   <div class="hero-body">
@@ -36,13 +36,13 @@
 </section>
 </template>
 <script>
-import Header from './../../components/Header'
+import HeaderNotAuth from './../../components/HeaderNotAuth'
 // import axios from 'axios'
 
 export default {
   name: 'app',
   components : {
-    Header
+    HeaderNotAuth
   },
   data() {
     return {
