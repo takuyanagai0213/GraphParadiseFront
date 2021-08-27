@@ -3,10 +3,10 @@
   <section class="section">
     <div class="container">
       <h1 class="title">
-        Hello World
+        ユーザ管理
       </h1>
       <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
+        ユーザの閲覧・更新ができます
       </p>
     </div>
     <div class="content" id="user_list">
