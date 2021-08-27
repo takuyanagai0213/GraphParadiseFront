@@ -10,13 +10,13 @@
       </p>
     </div>
   <div class="field">
-    <label class="label">Name</label>
+    <label class="label">名前</label>
     <div class="control">
       <input class="input" type="text"  name="name" v-model="name" placeholder="Text input">
     </div>
   </div>
   <div class="field">
-    <label class="label">Username</label>
+    <label class="label">ユーザID</label>
     <div class="control has-icons-left has-icons-right">
       <input class="input is-success" type="text"  name="user_name" placeholder="Text input" value="bulma">
       <span class="icon is-small is-left">
@@ -30,7 +30,7 @@
   </div>
   
   <div class="field">
-    <label class="label">Email</label>
+    <label class="label">メールアドレス</label>
     <div class="control has-icons-left has-icons-right">
       <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
       <span class="icon is-small is-left">
@@ -44,7 +44,7 @@
   </div>
   
   <div class="field">
-    <label class="label">Password</label>
+    <label class="label">パスワード</label>
     <div class="control has-icons-left has-icons-right">
       <input class="input is-danger" type="password"  name="password" v-model="password" placeholder="パスワードを入力してください">
       <span class="icon is-small is-left">
