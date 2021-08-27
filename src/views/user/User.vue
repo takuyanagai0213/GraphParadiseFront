@@ -26,7 +26,7 @@
         <i class="fas fa-exclamation-triangle"></i>
       </span>
     </div>
-    <p class="help is-danger">This パスワード is invalid</p>
+    <p class="help is-danger">{{ message }}</p>
   </div>
   <div class="field is-grouped">
     <div class="control">
@@ -49,7 +49,8 @@ export default {
   },
   data() {
     return {
-      info: []
+      info: [],
+      message: null
     }
   },
   computed() {
@@ -63,6 +64,9 @@ export default {
           password: "sssss",
         })
         .then(function(response) {
+          if(response.error == true){
+            this.message = "このパスワードは無効です"
+          }
           console.log(response)
         })
     },
