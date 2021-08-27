@@ -3,10 +3,10 @@
   <section class="section">
     <div class="container">
       <h1 class="title">
-        Hello World
+        新規ユーザ登録画面
       </h1>
       <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
+        以下に名前とパスワードを入力して登録をしてください。
       </p>
     </div>
   <div class="field">
@@ -30,10 +30,10 @@
   </div>
   <div class="field is-grouped">
     <div class="control">
-      <button class="button is-link" v-on:click="createUser">Submit</button>
+      <button class="button is-link" v-on:click="createUser">登録</button>
     </div>
     <div class="control">
-      <button class="button is-link is-light">Cancel</button>
+      <button class="button is-link is-light">クリア</button>
     </div>
   </div>
   </section>
