@@ -1,7 +1,7 @@
 <template>
   <Header/>
 
-<section class="hero is-primary is-fullheight">
+<section class="hero is-primary has-background-light">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
