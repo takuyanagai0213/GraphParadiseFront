@@ -14,7 +14,7 @@
     <div class="content">
       <div class="field is-grouped">
         <div class="control">
-            <button class="button is-link" id="submit">更新</button>
+            <button class="button is-link" v-on:click="updateUser">更新</button>
           </div>
           <div class="control">
             <button class="button is-link is-light">クリア</button>
