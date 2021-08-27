@@ -37,16 +37,13 @@ export default {
       info: []
     }
   },
-  computed() {
-
+  mounted() {
+      this.getUser();
   },
   methods: {
-    createUser: function() {
+    getUser: function() {
       axios
-        .get('http://localhost:90/user/new?name=' + this.name + '&password=' + this.password,{
-          name: "test",
-          password: "sssss",
-        })
+        .get('http://localhost:90/api/users',)
         .then(function(response) {
           console.log(response)
         })
