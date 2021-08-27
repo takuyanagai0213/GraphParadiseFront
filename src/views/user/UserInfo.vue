@@ -24,7 +24,7 @@
   </section>
 </template>
 <script>
-import Header from './../components/Header'
+import Header from './../../components/Header'
 import axios from 'axios'
 
 export default {
@@ -38,12 +38,13 @@ export default {
     }
   },
   mounted() {
-      this.getUser();
+      this.getUserByUserId();
   },
   methods: {
-    getUser: function() {
+    getUserByUserId: function() {
+        const user_id = "test_user_id";
       axios
-        .get('http://localhost:90/api/users',)
+        .get('http://localhost:90/api/user/only?user_id=' + user_id,)
         .then(function(response) {
           console.log(response)
         })
