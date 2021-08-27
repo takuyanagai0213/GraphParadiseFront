@@ -1,24 +1,24 @@
-# graph_paradise_front
+# GraphParadiseFront
+ポートフォリオ:様々なグラフを表示するアプリケーション(フロント) AWSコンテナ基盤で運用 (JavaScript)
+# GraphParadise (Front)
+Goで構築するマイクロサービスアプリケーションのフロントエンド(JavaScript)
 
-## Project setup
-```
-npm install
-```
+## 概要
+GraphParadiseはグラフの表示ができるアプリケーションです。
+開発環境にDockerを使用し、AWS ECSを使用して本番環境へのデプロイをコンテナ基盤で行なっています。
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 何ができるのか？（機能）
+GraphParadise は、以下のことができます。
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- グラフの表示
 
-### Lints and fixes files
-```
-npm run lint
-```
+## どのように作られているか？（技術）
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Golang
+- JavaScript
+- docker（開発環境・本番環境に導入）
+- AWS (IAM, VPC, ECR, Fargate, ECS, EKS, ALB, Route53, ACM)
+- jQuery
+- Github Actions(CI/CD)
+- Terraform(インフラのコード化)
+
