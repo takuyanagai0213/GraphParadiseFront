@@ -1,5 +1,4 @@
 <template>
-<body>
 <div class="hero is-info is-bold">
   <div class="hero-body">
       <div class="container">
