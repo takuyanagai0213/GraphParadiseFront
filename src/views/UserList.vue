@@ -19,7 +19,6 @@
             <button class="button is-link is-light">Cancel</button>
           </div>
         </div>
-      </div>
     </div>
   </section>
 </template>
