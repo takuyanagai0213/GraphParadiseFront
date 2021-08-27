@@ -43,7 +43,7 @@ export default {
   methods: {
     getUser: function() {
       axios
-        .get('http://localhost:90/api/users',)
+        .get('http://localhost:90/api/user/all',)
         .then(function(response) {
           console.log(response)
         })
