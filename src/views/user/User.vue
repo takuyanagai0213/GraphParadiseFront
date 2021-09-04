@@ -10,9 +10,9 @@
       </p>
     </div>
   <div class="field">
-    <label class="label">名前</label>
+    <label class="label">ユーザID</label>
     <div class="control">
-      <input class="input" type="text"  name="name" v-model="name" placeholder="Text input">
+      <input class="input" type="text"  name="name" v-model="user_id" placeholder="Text input">
     </div>
   </div>
   <div class="field">
@@ -27,6 +27,31 @@
       </span>
     </div>
     <p class="help is-danger">{{ message }}</p>
+  </div>
+  <div class="field">
+    <label class="label">名前</label>
+    <div class="control">
+      <input class="input" type="text"  name="name" v-model="name" placeholder="Text input">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-danger" type="email" v-model="email" placeholder="Email input">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-exclamation-triangle"></i>
+      </span>
+    </div>
+    <p class="help is-danger">This email is invalid</p>
+  </div>
+  <div class="field">
+    <label class="label">ユーザコメント</label>
+    <div class="control">
+      <textarea class="textarea" v-model="profile" placeholder="Textarea"></textarea>
+    </div>
   </div>
   <div class="field is-grouped">
     <div class="control">
@@ -60,8 +85,10 @@ export default {
     createUser: function() {
       axios
         .get('http://localhost:90/user/new?name=' + this.name + '&password=' + this.password,{
+          user_id: "sssss",
           name: "test",
-          password: "sssss",
+          email: "sssss",
+          profile: "sssss",
         })
         .then(function(response) {
           if(response.error == true){
