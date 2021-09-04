@@ -64,8 +64,8 @@
   </section>
 </template>
 <script>
+import client from './../../grpc/client.js'
 import Header from './../../components/Header'
-import axios from 'axios'
 
 export default {
   name: 'app',
@@ -75,29 +75,35 @@ export default {
   data() {
     return {
       info: [],
-      message: null
+      message: null,
+      user_id: null,
+      name: null,
+      password: null,
+      email: null,
+      profile: null,
     }
   },
-  computed() {
+  // computed() {
 
-  },
+  // },
   methods: {
-    createUser: function() {
-      axios
-        .get('http://localhost:90/user/new?name=' + this.name + '&password=' + this.password,{
-          user_id: "sssss",
-          name: "test",
-          email: "sssss",
-          profile: "sssss",
-        })
-        .then(function(response) {
-          if(response.error == true){
-            this.message = "このパスワードは無効です"
-          }
-          console.log(response)
-        })
+    createUser: async function() {
+      await client.
+        createUser(this.getUser(), (err, res) => {
+          console.log(res);
+        });
     },
-  }
+    getUser() {
+      const user = {
+        'user_id': this.user_id,
+        'user_name': this.name,
+        'password': this.password,
+        'email': this.email,
+        'profice_text': this.profile
+      };
+      return user;
+    },
+  },
 }
 // User.prototype.def_s = new Object({
 //   rooms: {},
