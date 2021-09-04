@@ -37,7 +37,7 @@
   <div class="field">
     <label class="label">Email</label>
     <div class="control has-icons-left has-icons-right">
-      <input class="input is-danger" type="email" v-model="email" placeholder="Email input">
+      <input class="input" type="email" v-model="email" placeholder="Email input">
       <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
       </span>
@@ -66,6 +66,7 @@
 <script>
 import client from './../../grpc/client.js'
 import Header from './../../components/Header'
+import { User } from './../../grpc/user_pb.js'
 
 export default {
   name: 'app',
@@ -79,7 +80,7 @@ export default {
       user_id: null,
       name: null,
       password: null,
-      email: null,
+      // email: null,
       profile: null,
     }
   },
@@ -88,19 +89,20 @@ export default {
   // },
   methods: {
     createUser: async function() {
-      await client.
-        createUser(this.getUser(), (err, res) => {
+      console.log(this.getUser());
+      await client.createUser(this.getUser(), {}, (err, res) => {
+          console.log(err);
           console.log(res);
         });
     },
     getUser() {
-      const user = {
-        'user_id': this.user_id,
-        'user_name': this.name,
-        'password': this.password,
-        'email': this.email,
-        'profice_text': this.profile
-      };
+      const user = new User();
+      user.setUserId(this.user_id);
+      user.setUserName(this.name);
+      user.setPassword(this.password);
+      // user.setEmail(this.email);
+      user.setProfileText(this.profile);
+      user.setAuthority(9);
       return user;
     },
   },
