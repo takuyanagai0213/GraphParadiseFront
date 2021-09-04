@@ -11,6 +11,7 @@
     "axios": "^0.21.1",
     "bulma": "^0.9.3",
     "core-js": "^3.6.5",
+    "protoc-gen-grpc-web": "^1.2.1",
     "vue": "^3.0.0",
     "vue-axios": "^3.2.5",
     "vue-router": "^4.0.0-0"
