@@ -66,7 +66,12 @@
 <script>
 import client from './../../grpc/client.js'
 import Header from './../../components/Header'
-import { User } from './../../grpc/user_pb.js'
+
+import {
+  CreateUserRequest,
+  // CreateUserResponse,
+  User,
+} from "./../../grpc/user_pb"
 
 export default {
   name: 'app',
@@ -80,7 +85,7 @@ export default {
       user_id: null,
       name: null,
       password: null,
-      // email: null,
+      email: null,
       profile: null,
     }
   },
@@ -88,23 +93,28 @@ export default {
 
   // },
   methods: {
-    createUser: async function() {
-      console.log(this.getUser());
-      await client.createUser(this.getUser(), {}, (err, res) => {
-          console.log(err);
-          console.log(res);
-        });
+    createUser() {
+      const user = this.createUserData();
+      this.create(user)
     },
-    getUser() {
+    create(user) {
+      const request = new CreateUserRequest();
+      request.setUser(user);
+      client.createUser(request, {}, (err, res) => {
+        console.log(err)
+        console.log(res)
+      })
+    },
+    createUserData() {
       const user = new User();
       user.setUserId(this.user_id);
       user.setUserName(this.name);
       user.setPassword(this.password);
-      // user.setEmail(this.email);
+      user.setEmail(this.email);
       user.setProfileText(this.profile);
       user.setAuthority(9);
       return user;
-    },
+    }
   },
 }
 // User.prototype.def_s = new Object({
