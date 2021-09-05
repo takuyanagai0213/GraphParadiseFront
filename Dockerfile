@@ -9,11 +9,9 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm install
-# 本番用にコードを作成している場合
-# RUN npm install --only=production
 
 # アプリケーションのソースをバンドルする
 COPY . .
 
-EXPOSE 8080
-# CMD [ "node", "server.js" ]
+EXPOSE 443
+CMD [ "npm", "run", "serve" ]
