@@ -112,7 +112,7 @@ export default {
       user.setPassword(this.password);
       user.setEmail(this.email);
       user.setProfileText(this.profile);
-      user.setAuthority(9);
+      user.setAuthority(1);
       return user;
     }
   },
